@@ -8,7 +8,7 @@ int main(void)
 {
 	int i;
 
-	for(i = 10; i <= 19; i++)
+	for (i = 10; i <= 19; i++)
 	{
 		if (i / 10)
 		{
