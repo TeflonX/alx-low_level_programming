@@ -10,9 +10,13 @@ int main(void)
 
 	char j;
 
-	for (i = 'a', i <= 'z'; j = 'A', j <= 'Z'; i++, j++)
+	for (i = 'a'; i <= 'z'; i++)
 	{
 		putchar(i);
+	}
+
+	for (j = 'A'; j <= 'Z'; j++)
+	{
 		putchar(j);
 	}
 	putchar('\n');
