@@ -9,17 +9,17 @@
  */
 int _islower(int c)
 {
-	int s;
+	int c;
 
-	for (s >= 97; s <= 122; s++)
+	for (c >= 97; c <= 122; c++)
 	{
 		return (1);
 	}
-	for (s > 122; s <= 255; s++)
+	for (c > 122; c <= 255; c++)
 	{
 		return (0);
 	}
-	for (s = 0; s < 97; s++)
+	for (c = 0; c < 97; c++)
 	{
 		return (0);
 	}
