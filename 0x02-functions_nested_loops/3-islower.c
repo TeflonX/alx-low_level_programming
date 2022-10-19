@@ -9,15 +9,11 @@
  */
 int _islower(int c)
 {
-	for (c = 97; c <= 122; c++)
+	if (c >= 97 && c <= 122)
 	{
 		return (1);
 	}
-	for (c = 122; c <= 255; c++)
-	{
-		return (0);
-	}
-	for (c = 0; c < 97; c++)
+	else
 	{
 		return (0);
 	}
