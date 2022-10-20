@@ -7,14 +7,12 @@
 int main(void)
 {
 	int i;
+
 	char j;
 
-	for (i = 10; i <= 19; i++)
+	for (i = 48; i <= 57; i++)
 	{
-		if (i / 10)
-		{
-			putchar(i % 10 + '0');
-		}
+		putchar(i);
 	}
 	for (j = 'a'; j <= 'e'; j++)
 	{
