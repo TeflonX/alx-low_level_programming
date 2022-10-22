@@ -1,9 +1,10 @@
 #include "main.h"
 
 /**
- *
+ * print_square - Prints square.
+ * Return: void.
+ * @size: integer.
  */
-
 
 void print_square(int size)
 {
