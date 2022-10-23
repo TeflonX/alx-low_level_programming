@@ -7,19 +7,19 @@
  */
 int main(void)
 {
-	int a;
-
-	int ans;
-
-	int sum;
-
-	int m;
+	int n, i, a;
 
 	a = 15;
-	m = 1023 / a;
-	sum = (m * (m + 1)) / 2;
-	ans = a * sum;
-	printf("sum of multiples of %d: %d", a, ans);
+
+	for (i = 1; i <= 66; i = i++)
+	{
+		n = a + 15;
+		a = n;
+		if (i == 66)
+		{
+			printf("%d", n);
+		}
+	}
 	printf("\n");
 
 	return (0);
