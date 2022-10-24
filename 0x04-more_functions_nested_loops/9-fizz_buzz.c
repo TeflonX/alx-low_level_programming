@@ -17,17 +17,17 @@ int main(void)
 
 	for (i = 1; i <= 100; i++)
 	{
-		if (i % 3 == 0)
+		if (i % 15 == 0)
 		{
-			printf("%s", c);
+			printf("%s", e);
 		}
 		else if (i % 5 == 0)
 		{
 			printf("%s", d);
 		}
-		else if (i % 15 == 0)
+		else if (i % 3 == 0)
 		{
-			printf("%s", e);
+			printf("%s", c);
 		}
 		else
 		{
