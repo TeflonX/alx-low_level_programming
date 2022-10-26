@@ -11,10 +11,10 @@ void rev_string(char *s)
 {
 	int length, i;
 
-	char temp, *begin, *end;
+	char temp, *start, *end;
 
 	length = _strlen(s);
-	begin = s;
+	start = s;
 	end = s;
 	for (i = 0; i < length - 1; i++)
 	{
@@ -23,10 +23,10 @@ void rev_string(char *s)
 	for (i = 0; i < length / 2; i++)
 	{
 		temp   = *end;
-		*end   = *begin;
-		*begin = temp;
+		*end   = *start;
+		*start = temp;
 
-		begin++;
+		start++;
 		end--;
 	}
 }
