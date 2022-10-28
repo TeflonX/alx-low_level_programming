@@ -1,15 +1,16 @@
 #include "main.h"
 
 /**
- * string_toupper - changes lowercase to uppercase.
+ * string_toupper - a function.
  * Return: char.
  * @str: pointer.
+ * @' ' : pointer
  */
 
 char *string_toupper(char *)
 {
 	int i;
-	
+
 	char str;
 
 	for (i = 0; str[i] != 0; i++)
@@ -21,4 +22,3 @@ char *string_toupper(char *)
 	}
 	return(str)
 }
-	
