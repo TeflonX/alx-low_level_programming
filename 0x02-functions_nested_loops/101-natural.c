@@ -10,15 +10,15 @@ int main(void)
 
 	int i;
 
-	int n = 0;
+	int t1 = 5;
 
-	for (i = 1; i <= 1023; i = i++)
+	int nextTerm = t1 + 5;
+
+	for (i = 1; i <= 203; i = i++)
 	{
-		if (i % 3 == 0 || i % 5 == 0)
-		{
-			n += i;
-			printf("%d", n);
-		}
+		printf("%d", nextTerm);
+		t1 = nextTerm;
+		nextTerm = t1 + 5;
 	}
 	printf("\n");
 
