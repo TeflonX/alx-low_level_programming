@@ -2,7 +2,6 @@
 
 /**
  * rev_string - print string in reverse.
- * _strlen - length of string.
  * Return: void
  * @s: char pointer.
  */
@@ -20,8 +19,9 @@ void rev_string(char *s)
 
 	for (j = 0; j < n / 2; j++)
 	{
-		s[i] = c;
-		s[i] = s[n - 1 - i];
-		c = s[n - 1 - i];
+		c = s[j];
+		s[j] = s[n - 1 - j];
+		s[n - 1 - j] = c;
 	}
 }
+
