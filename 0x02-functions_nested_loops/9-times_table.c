@@ -1,14 +1,17 @@
 #include "main.h"
+#include <stdio.h>
 
 void times_table(void)
 {
-	int n;
+	int i, j, n;
 
-	int j;
-
-	if (n >= 0)
+	for (i = 0; i <= 9; i++)
 	{
-		j = 9 * n;
-		_putchar(j);
+		for (j = 0; j <= 9; j++)
+		{
+			n = i * j;
+			printf("%d, ", n);
+		}
+		printf("\n");
 	}
 }
