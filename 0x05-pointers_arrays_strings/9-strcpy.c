@@ -8,22 +8,18 @@
 
 char *_strcpy(char *dest, char *src)
 {
-	int i, j, k, n1, n2;
-
-	for (i = 0; dest[i] != '\0'; i++)
-	{
-	}
-	n1 = i;
+	int j, k, n2;
 
 	for (j = 0; src[j] != '\0'; j++)
 	{
 	}
 	n2 = j;
 
-	for (k = 0; k <= n2; k++)
+	for (k = 0; k <= n2 - 1; k++)
 	{
-		dest[n1 + k] = src[k];
+		dest[k] = src[k];
 	}
+	dest[k] = '\0';
 
 	return (dest);
 }
