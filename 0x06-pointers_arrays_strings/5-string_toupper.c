@@ -7,11 +7,9 @@
  * @' ' : pointer
  */
 
-char *string_toupper(char *)
+char *string_toupper(char *str)
 {
 	int i;
-
-	char str;
 
 	for (i = 0; str[i] != 0; i++)
 	{
@@ -20,5 +18,5 @@ char *string_toupper(char *)
 			str[i] = str[i] - 32;
 		}
 	}
-	return(str)
+	return (str);
 }
