@@ -22,12 +22,12 @@ char *_strchr(char *s, char c)
 			break;
 		}
 	}
-	if (flag == 1)
+	if (flag == 0)
 	{
-		return (s + i);
+		return (NULL);
 	}
 	else
 	{
-		return (NULL);
+		return (s + i);
 	}
 }
