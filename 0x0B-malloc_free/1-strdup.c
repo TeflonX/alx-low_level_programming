@@ -12,16 +12,17 @@ char *_strdup(char *str)
 {
 	char *s;
 
-	int len, i;
+	int len1, len2, i;
 
-	len = strlen(str);
-	s = malloc((len + 1) * sizeof(char));
+	len1 = strlen(str);
+	s = malloc((len1 + 1) * sizeof(char));
+	len2 = strlen(s);
 
-	if (str == NULL || s == NULL)
+	if (str == NULL || len2 == len1)
 	{
 		return (NULL);
 	}
-	for (i = 0; i <= len; i++)
+	for (i = 0; i <= len1; i++)
 	{
 		*(s + i) = *(str + i);
 	}
