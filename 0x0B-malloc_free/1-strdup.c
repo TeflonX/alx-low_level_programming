@@ -14,19 +14,16 @@ char *_strdup(char *str)
 
 	int len1 = 0, i;
 
-	len1 = strlen(str);
-	s = malloc((len1 + 1) * sizeof(char));
-	if (str == NULL || s == NULL)
+	if (str == NULL)
 	{
 		return (NULL);
 	}
 	
-	/**
-	 * len1 = strlen(str);
-	 * s =  malloc((len1 + 1) * sizeof(char));
-	 *
-	 if (s == NULL)
-	 	return (NULL);*/
+	len1 = strlen(str);
+	s =  malloc((len1 + 1) * sizeof(char));
+	
+	if (s == NULL)
+		return (NULL);
 	for (i = 0; i <= len1; i++)
 	{
 		*(s + i) = *(str + i);
