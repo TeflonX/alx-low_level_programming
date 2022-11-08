@@ -21,11 +21,12 @@ char *_strdup(char *str)
 		return (NULL);
 	}
 	
-	//len1 = strlen(str);
-	//s =  malloc((len1 + 1) * sizeof(char));
-
-	//if (s == NULL)
-	//	return (NULL);
+	/**
+	 * len1 = strlen(str);
+	 * s =  malloc((len1 + 1) * sizeof(char));
+	 *
+	 if (s == NULL)
+	 	return (NULL);*/
 	for (i = 0; i <= len1; i++)
 	{
 		*(s + i) = *(str + i);
