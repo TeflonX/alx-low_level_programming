@@ -21,15 +21,16 @@ char *_strdup(char *str)
 	{
 		return (NULL);
 	}
+
+	if (s == NULL)
+	{
+		return (NULL);
+	}
 	
 	for (i = 0; i <= len1; i++)
 	{
 		*(s + i) = *(str + i);
 	}
 
-	if (s == NULL)
-	{
-		return (NULL);
-	}
 	return (s);
 }
