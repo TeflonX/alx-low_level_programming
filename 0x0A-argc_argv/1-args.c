@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 /**
  * main - prints the number of arguent passed.
  * Return: 0 (Success)
