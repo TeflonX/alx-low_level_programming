@@ -1,5 +1,4 @@
-#ifndef ABS_X
+#pragma once
 
 #define ABS(x) ((x<0)?(-x):(x))
 
-#endif
