@@ -1,4 +1,5 @@
-#ifndef DOG
+#ifndef DOG_H
+#define DOG_H
 
 /**
  * struct dog - defines information on a canine.
