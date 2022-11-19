@@ -1,18 +1,18 @@
 #include "main.h"
 #include <stdio.h>
 
-void times_table(void)
+void print_times_table(int n)
 {
 	int i, j, o;
 
-	for (i = '0'; i <= '9'; i++)
+	for (i = '0'; i <= n; i++)
 	{
-		for (j = '0'; j <= '9'; j++)
+		for (j = '0'; j <= n; j++)
 		{
 			o = i * j;
 			_putchar(o);
 			
-			if (j != 57)
+			if (j != n)
 			{
 				_putchar(',');
 				_putchar(' ');
