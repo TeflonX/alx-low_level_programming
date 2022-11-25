@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "lists.h"
 #include <stdlib.h>
+#include <string.h>
 /**
  * print_list - a function that prints all the elements of a list_t list.
  * Return: number of nodes in singly linked list.
