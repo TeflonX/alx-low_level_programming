@@ -5,13 +5,7 @@
 
 list_t *add_node_end(list_t **head, const char *str)
 {
-	int i;
-
-	list_t *move;
-
 	list_t *temp;
-
-	int count = 1;
 
 	temp = malloc(sizeof(list_t));
 
@@ -22,18 +16,10 @@ list_t *add_node_end(list_t **head, const char *str)
 	temp->str = strdup(str);
 	temp->len = strlen(str);
 
-	move = *head;
-	while ((move->next) != NULL)
-	{
-		move = move->next;
-		count++;
-	}
-	
-	move = *head;
-	for (i = 1; i <= count; i++)
-		move = move->next;
+	while (head->next != NULL)
+		head = head->next;
 
-	move->next = temp;
+	head->next = temp;
 
 	return (temp);
 
