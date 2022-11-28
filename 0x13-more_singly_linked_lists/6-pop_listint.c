@@ -14,6 +14,9 @@ int pop_listint(listint_t **head)
 
 	int x;
 
+	if (!*head)
+		return (0);
+
 	trav = new = *head;
 	x = trav->n;
 	trav = trav->next;
