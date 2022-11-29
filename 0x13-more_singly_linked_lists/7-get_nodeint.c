@@ -27,18 +27,17 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 		temp = temp->next;
 		count++;
 	}
-
+	if (index == 0)
+		return (head);
+	if (index == 1)
+		return (head->next);
 	if (index > count)
 		return (NULL);
-	else if (index == 0)
-		return (head);
-	else if (index == 1)
-		return (head->next);
-	else
+	if (index > 1 && index < count)
 	{
 		for (i = 0; i < (index - 1); i++)
 			trav = trav->next;
-	}
 
-	return (trav->next);
+		return (trav->next);
+	}
 }
