@@ -28,8 +28,7 @@ unsigned int idx, int n)
 	}
 	if (idx > count)
 		return (NULL);
-	if ((idx >= 1) && (idx < count))
-	{
+	else {
 		for (i = 0; i < (idx - 1); i++)
 		{
 			trav = trav->next;
