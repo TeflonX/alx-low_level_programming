@@ -34,7 +34,7 @@ unsigned int idx, int n)
 		temp->next = *head;
 		*head = temp;
 	}
-	if ((idx > 1) && (idx < count))
+	if ((idx > 1) && (idx <= count))
 	{
 		for (i = 0; i < (idx - 1); i++)
 		{
