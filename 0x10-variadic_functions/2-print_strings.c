@@ -5,14 +5,14 @@
 void print_strings(const char *separator, const unsigned int n, ...)
 {
 	unsigned int i;
-	char *str;
+	unsigned int c;
 	va_list args;
 
 	va_start(args, n);
 	for (i = 0; i < n; i++)
 	{
-		*str = va_arg(args, int);
-		printf("%s%c", *str, *separator);
+		c = va_arg(args, const unsigned int);
+		printf("%c%c", c, *separator);
 	}
 	printf("\n");
 	va_end(args);

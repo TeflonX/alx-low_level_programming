@@ -23,6 +23,11 @@ int main(void)
 			{
 				for (l = 48; l <= 57; l++)
 				{
+					if ((i == j && k < l) || (i < j && 
+					k == l))
+					{
+						continue;
+					}
 					putchar(i);
 					putchar(j);
 					putchar(' ');

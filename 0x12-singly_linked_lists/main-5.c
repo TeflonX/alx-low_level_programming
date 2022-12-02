@@ -6,13 +6,26 @@
 int main(void)
 
 {
-		list_t head = {NULL, 0, 0};
-		list_t tail = {"School", 6, 0};
-		size_t n;
+	list_t *head;
 
-		head.next = &tail;
-		n = print_list(&head);
-		printf("-> %lu elements\n", n);
-		return (0);
+
+
+	    head = NULL;
+
+	        add_node_end(&head, "Bob");
+
+		    add_node_end(&head, "&");
+
+		        add_node_end(&head, "Kris");
+
+			    add_node_end(&head, "love");
+	add_node_end(&head, "asm");
+
+	    print_list(head);
+
+	        free_list(head);
+
+		    head = NULL;
+	return (0);
 
 }
