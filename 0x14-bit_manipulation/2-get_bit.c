@@ -1,4 +1,5 @@
 #include "main.h"
+#include "limits.h"
 /**
  * get_bit - a function that returns the value of a bit at
  * a given index
@@ -18,7 +19,7 @@ int get_bit(unsigned long int n, unsigned int index)
 		i++;
 	}
 
-	if (mask > n)
+	if (n >= ULONG_MAX)
 		return (-1);
 
 	if (mask & n)
