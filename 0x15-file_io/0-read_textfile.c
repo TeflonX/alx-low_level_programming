@@ -35,6 +35,9 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (count1 < 0)
 		return (0);
 
+	if (count != count1)
+		return (0);
+
 	close(fd);
 	free(ptr);
 	return (count);
