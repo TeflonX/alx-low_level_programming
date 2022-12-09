@@ -35,7 +35,7 @@ int main(int ac, char **av)
 	}
 
 	fd2 = open(av[2], O_RDWR | O_CREAT | O_TRUNC, 00664);
-	count2 = write(fd2, buf, 1024);
+	count2 = write(fd2, buf, count1);
 	if (fd2 < 0 || count2 < 0)
 	{
 		dprintf(2, "Error: Can't write to %s\n", av[1]);
