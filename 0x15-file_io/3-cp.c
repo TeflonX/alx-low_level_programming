@@ -18,7 +18,7 @@ int main(int ac, char **av)
 
 	buf = malloc(1024);
 	if (buf != 0)
-		return (NULL);
+		return (1);
 
 	if (ac != 3)
 	{
