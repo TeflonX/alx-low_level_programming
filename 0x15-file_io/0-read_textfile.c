@@ -16,7 +16,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	char *ptr;
 
 	if (!filename)
-		return (0);
+	{
 
 	fd = open(filename, O_RDWR);
 	if (fd < 0)
@@ -41,4 +41,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	close(fd);
 	free(ptr);
 	return (count);
+	}
+	else
+		return (0);
 }
