@@ -16,7 +16,7 @@ void close_fd(int fd)
 	z = close(fd);
 	if (z != 0)
 	{
-		dprintf(2, "Error: Can't close fd %d", z);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d", z);
 		exit(100);
 	}
 }
@@ -35,7 +35,7 @@ int main(int ac, char **av)
 
 	if (ac != 3)
 	{
-		dprintf(2, "Usage: cp file_from file_to\n");
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(98);
 	}
 	buf = malloc(sizeof(char) * 1024);
@@ -45,7 +45,8 @@ int main(int ac, char **av)
 	count1 = read(fd1, buf, 1024);
 	if (fd1 == -1 || count1 == -1)
 	{
-		dprintf(2, "Error: Can't read from file %s\n", av[1]);
+		dprintf(STDERR_FILENO,
+				"Error: Can't read from file %s\n", av[1]);
 		free(buf);
 		exit(98);
 	}
@@ -55,7 +56,8 @@ int main(int ac, char **av)
 		count2 = write(fd2, buf, count1);
 		if (fd2 < 0 || count2 < 0)
 		{
-			dprintf(2, "Error: Can't write to %s\n", av[2]);
+			dprintf(STDERR_FILENO,
+					"Error: Can't write to %s\n", av[2]);
 			free(buf);
 			exit(99);
 		}
