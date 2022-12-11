@@ -5,6 +5,23 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 /**
+ * close_fd - closes an open file
+ * Return: void
+ * @fd: file descriptor of file to be closed
+ */
+void close_fd(int fd)
+{
+	int z;
+
+	z = close(fd);
+	if (z != 0)
+	{
+		dprintf(2, "Error: Can't close fd %d", z1);
+		exit(100);
+	}
+}
+
+/**
  * main - copy from one file to another
  * Return: 0 (Success)
  * @ac: argument count
@@ -16,39 +33,36 @@ int main(int ac, char **av)
 
 	char *buf;
 
-	buf = malloc(1024);
-	if (buf != 0)
-		return (1);
-
 	if (ac != 3)
 	{
 		dprintf(2, "Usage: cp file_from file_to\n");
 		exit(98);
 	}
-
-	fd1 = open(av[1], O_RDWR);
+	buf = malloc(sizeof(char) * 1024);
+	if (!buf)
+		return (1);
+	fd1 = open(av[1], O_RDONLY);
 	count1 = read(fd1, buf, 1024);
-	if (fd1 < 0 || count1 < 0)
+	if (fd1 == -1 || count1 == -1)
 	{
 		dprintf(2, "Error: Can't read from file %s\n", av[1]);
+		free(buf);
 		exit(98);
 	}
-
-	fd2 = open(av[2], O_RDWR | O_CREAT | O_TRUNC, 00664);
-	count2 = write(fd2, buf, count1);
-	if (fd2 < 0 || count2 < 0)
+	fd2 = open(av[2], O_WRONLY | O_CREAT | O_TRUNC, 00664);
+	while (count1 > 0)
 	{
-		dprintf(2, "Error: Can't write to %s\n", av[1]);
-		exit(99);
+		count2 = write(fd2, buf, count1);
+		if (fd2 < 0 || count2 < 0)
+		{
+			dprintf(2, "Error: Can't write to %s\n", av[2]);
+			free(buf);
+			exit(99);
+		}
+		count1 = read(fd1, buf, 1024);
+		fd2 = open(av[2], O_WRONLY, O_APPEND);
 	}
-
-	z1 = close(fd1);
-	z2 = close(fd2);
-	if (z1 != 0 || z2 != 0)
-	{
-		dprintf(2, "Error: Can't close fd %d", z1);
-		exit(100);
-	}
-
+	close_fd(fd1);
+	close_fd(fd2);
 	return (0);
 }
