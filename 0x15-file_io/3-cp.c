@@ -44,6 +44,13 @@ int main(int ac, char **av)
 
 	fd1 = open(av[1], O_RDONLY);
 	count1 = read(fd1, buf, 1024);
+	if (fd1 == -1 || count1 == -1)
+	{
+		dprintf(STDERR_FILENO,
+			"Error: Can't read from file %s\n", av[1]);
+		free(buf);
+		exit(98);
+		}
 	fd2 = open(av[2], O_WRONLY | O_CREAT | O_TRUNC, 00664);
 	while (count1 > 0)
 	{
