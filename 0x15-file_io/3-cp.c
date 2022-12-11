@@ -41,23 +41,24 @@ int main(int ac, char **av)
 	buf = malloc(sizeof(char) * 1024);
 	if (!buf)
 		return (1);
+
 	fd1 = open(av[1], O_RDONLY);
 	count1 = read(fd1, buf, 1024);
-	if (fd1 == -1 || count1 == -1)
-	{
-		dprintf(STDERR_FILENO,
-				"Error: Can't read from file %s\n", av[1]);
-		free(buf);
-		exit(98);
-	}
 	fd2 = open(av[2], O_WRONLY | O_CREAT | O_TRUNC, 00664);
 	while (count1 > 0)
 	{
+		if (fd1 == -1 || count1 == -1)
+		{
+			dprintf(STDERR_FILENO,
+				"Error: Can't read from file %s\n", av[1]);
+			free(buf);
+			exit(98);
+		}
 		count2 = write(fd2, buf, count1);
 		if (fd2 < 0 || count2 < 0)
 		{
 			dprintf(STDERR_FILENO,
-					"Error: Can't write to %s\n", av[2]);
+				"Error: Can't write to %s\n", av[2]);
 			free(buf);
 			exit(99);
 		}
