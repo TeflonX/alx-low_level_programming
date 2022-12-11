@@ -16,7 +16,7 @@ void close_fd(int fd)
 	z = close(fd);
 	if (z != 0)
 	{
-		dprintf(2, "Error: Can't close fd %d", z1);
+		dprintf(2, "Error: Can't close fd %d", z);
 		exit(100);
 	}
 }
@@ -29,7 +29,7 @@ void close_fd(int fd)
  */
 int main(int ac, char **av)
 {
-	int fd1, fd2, count1, count2, z1, z2;
+	int fd1, fd2, count1, count2;
 
 	char *buf;
 
