@@ -21,9 +21,6 @@ void close_fd(int fd)
 	}
 }
 
-void return_error(int count, char av[i])
-{
-
 /**
  * main - copy from one file to another
  * Return: 0 (Success)
