@@ -65,7 +65,7 @@ int main(int ac, char *av[])
 	if (count1 < 0)
 	{
 		dprintf(STDERR_FILENO,
-			"Error: Can't write to %s\n", av[1]);
+			"Error: Can't read from %s\n", av[1]);
 		exit(98);
 	}
 	close_fd(fd1);
