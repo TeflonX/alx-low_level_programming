@@ -21,29 +21,9 @@ void close_fd(int fd)
 	}
 }
 
-/**
- * return_error - prints error if file fails to open, read or write
- * Return: void
- * @fd1: determines if read or open operation fail for first file.
- * @fd2: determines if open or write fail for second file
- * @av: pointer to argument vector
- */
-void return_error(int fd1, int fd2, char *av[])
+void return_error(int fd, av[i])
 {
-	if (fd1 == -1)
-	{
-		dprintf(STDERR_FILENO,
-			"Error: Can't read from file %s\n", av[1]);
-		exit(98);
-	}
-	if (fd2 < 0)
-	{
-		dprintf(STDERR_FILENO,
-			"Error: Can't write to %s\n", av[2]);
-		exit(99);
-	}
-}
-
+	if (fd < 0 
 /**
  * main - copy from one file to another
  * Return: 0 (Success)
@@ -62,16 +42,35 @@ int main(int ac, char *av[])
 		exit(97);
 	}
 	fd1 = open(av[1], O_RDONLY);
-	(return_error(fd1, 0, av));
-
+	if (fd1 == -1)
+	{
+		dprintf(STDERR_FILENO,
+			"Error: Can't read from file %s\n", av[1]);
+		exit(98);
+	}
 	fd2 = open(av[2], O_WRONLY | O_CREAT | O_TRUNC, 00664);
-	(return_error(0, fd2, av));
+	if (fd2 < 0)
+	{
+		dprintf(STDERR_FILENO,
+			"Error: Can't write to %s\n", av[2]);
+		exit(99);
+	}
 	while ((count1 = read(fd1, buf, 1024)) > 0)
 	{
 		count2 = write(fd2, buf, count1);
-		(return_error(0, count2, av));
+		if (count2 < 0)
+		{
+			dprintf(STDERR_FILENO,
+			"Error: Can't write to %s\n", av[2]);
+			exit(99);
+		}
 	}
-	(return_error(count1, 0, av));
+	if (count1 < 0)
+	{
+		dprintf(STDERR_FILENO,
+			"Error: Can't read from file %s\n", av[1]);
+		exit(98);
+	}
 	close_fd(fd1);
 	close_fd(fd2);
 	return (0);
