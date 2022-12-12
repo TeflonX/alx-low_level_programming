@@ -55,7 +55,7 @@ int main(int ac, char *av[])
 	while ((count1 = read(fd1, buf, 1024)) > 0)
 	{
 		count2 = write(fd2, buf, count1);
-		if (fd2 < 0 || count2 < 0)
+		if (count2 < 0)
 		{
 			dprintf(STDERR_FILENO,
 			"Error: Can't write to %s\n", av[2]);
@@ -65,7 +65,7 @@ int main(int ac, char *av[])
 	if (count1 < 0)
 	{
 		dprintf(STDERR_FILENO,
-			"Error: Can't read from %s\n", av[1]);
+			"Error: Can't read from file %s\n", av[1]);
 		exit(98);
 	}
 	close_fd(fd1);
