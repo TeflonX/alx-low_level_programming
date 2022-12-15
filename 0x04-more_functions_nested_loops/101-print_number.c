@@ -6,7 +6,7 @@
  */
 void print_number(int n)
 {
-	int count, i, num;
+	int count, i, j, reg, num;
 
 	if (n == 0)
 		_putchar(0 + '0');
@@ -20,10 +20,12 @@ void print_number(int n)
 	while (i != 0)
 	{
 		i = i / 10;
-		count = count * 10;
+		reg++;
 	}
 
-	count = count / 10;
+	for (j = 1; j < reg; j++)
+		count = count * 10;
+
 	num = 0;
 	while (count != 0)
 	{
