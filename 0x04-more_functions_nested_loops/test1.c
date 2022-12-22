@@ -6,19 +6,19 @@
  */
 void print_number(int n)
 {
-	int i, count, reg, num;
+	unsigned int i, count, reg, num, num1, num2;
 
-	unsigned int num1, num2;
-
-	if (n >= 0)
-		num1 = n;
+	if (n == 0)
+		_putchar(0 + '0');
 	if (n < 0)
 	{
 		_putchar('-');
 		num1 = n * (-1);
 	}
-	num2 = num1;
+	if (n > 0)
+		num1 = n;
 
+	num2 = num1;
 	reg = 0;
 	count = 1;
 	while (num1 != 0)
