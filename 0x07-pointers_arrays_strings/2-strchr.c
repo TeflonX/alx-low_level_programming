@@ -11,17 +11,15 @@
 
 char *_strchr(char *s, char c)
 {
-	int i, j, flag;
-
-	j = strlen(s);
+	int i, flag;
 
 	flag = 0;
 
-	for (i = 0; i <= j; i++)
+	for (i = 0; i <= strlen(s); i++)
 	{
-		if (*(s + i) == c)
+		if (s[i] == c)
 		{
-			flag = 1;
+			flag++;
 			break;
 		}
 	}
@@ -31,6 +29,6 @@ char *_strchr(char *s, char c)
 	}
 	else
 	{
-		return (s + i);
+		return (&s[i]);
 	}
 }
