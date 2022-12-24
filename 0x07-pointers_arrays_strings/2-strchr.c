@@ -11,7 +11,7 @@
 
 char *_strchr(char *s, char c)
 {
-	int i, flag;
+	size_t i, flag;
 
 	flag = 0;
 
@@ -29,6 +29,6 @@ char *_strchr(char *s, char c)
 	}
 	else
 	{
-		return (&(s[i]));
+		return (&s[i]);
 	}
 }
