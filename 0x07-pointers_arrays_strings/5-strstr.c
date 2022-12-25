@@ -27,7 +27,7 @@ char *_strstr(char *haystack, char *needle)
 		if (j == len2)
 			break;
 	}
-	if (i == len1 - 1)
+	if (i == len1)
 	{
 		return (NULL);
 	}
