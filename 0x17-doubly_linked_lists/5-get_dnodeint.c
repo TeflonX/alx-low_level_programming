@@ -18,21 +18,26 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 
 		trav = assign = head;
 		count = 0;
-		while (trav->next)
+		while (trav)
 		{
 			count++;
 			trav = trav->next;
 		}
-
-		if (index >= count || index < 0)
+		if (index == 0)
+			return (assign);
+		if (index == 1)
+			return (assign->next);
+		if (index > count)
 			return (NULL);
-
-		for (i  = 0; i < index; i++)
+		if (index > 1 && index < count)
 		{
-			assign = assign->next;
+			for (i  = 0; i < (index - 1); i++)
+			{
+				assign = assign->next;
+			}
 		}
 
-		return (assign);
+		return (assign->next);
 	}
 	else
 		return (NULL);
