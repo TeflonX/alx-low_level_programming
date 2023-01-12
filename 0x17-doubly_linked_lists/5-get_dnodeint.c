@@ -24,7 +24,7 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 			trav = trav->next;
 		}
 
-		if (index >= count)
+		if (index >= count || index < 0)
 			return (NULL);
 
 		for (i  = 0; i < index; i++)
