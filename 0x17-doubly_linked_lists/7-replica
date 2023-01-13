@@ -1,0 +1,67 @@
+#include "lists.h"
+#include <stdlib.h>
+#include <stdio.h>
+insert_at_index_zero
+{
+dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
+{
+	dlistint_t *trav1, *trav2, *new;
+
+	unsigned int i, count;
+
+	if (*h)
+	{	
+		new = malloc(sizeof(dlistint_t));
+		if (!new)
+			return (NULL);
+		new->n = n;
+		new->prev = NULL;
+		new->next = NULL;
+		
+		trav1 = *h;
+		count = 0;
+		while (trav1)
+		{
+			count++;
+			trav1 = trav1->next;
+		}
+		printf("count = %d\nidx = %d\n", count, idx);
+		if (idx > count)
+			return (NULL);
+		else
+		{
+			if (idx == 0)
+			{
+				new->next = *h;
+				(*h)->prev = new;
+				*h = new;
+			}
+			if (idx > 0 && idx < count)
+			{
+				trav1 = trav2 = *h;
+				for (i = 0; i < idx - 1; i++)
+				{
+					trav1 = trav1->next;
+					trav2 = trav2->next;
+				}
+				trav2 = trav2->next;
+
+				new->prev = trav1;
+				new->next = trav1->next;
+				trav1->next = new;
+				trav2->prev = new;
+			}
+			if (idx == count)
+			{
+				trav1 = *h;
+				while (trav1->next)
+					trav1 = trav1->next;
+				new->prev = trav1;
+				trav1->next = new;
+			}
+		}
+		return (new);
+	}
+	else
+		return (NULL);
+}
