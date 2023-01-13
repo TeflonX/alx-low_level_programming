@@ -11,6 +11,8 @@ void delete_node(dlistint_t **head, unsigned int index)
 {
 	dlistint_t *trav1, *trav2, *trav3;
 
+	unsigned int i;
+
 	trav2 = *head;
 	for (i = 0; i < index; i++)
 		trav2 = trav2->next;
@@ -32,9 +34,9 @@ void delete_node(dlistint_t **head, unsigned int index)
  */
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
-	dlistint_t *trav1, *trav2, *trav3;
+	dlistint_t *trav1, *trav2;
 
-	unsigned int i, count;
+	unsigned int count;
 
 	if (!*head)
 		return (-1);
