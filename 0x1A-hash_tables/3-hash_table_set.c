@@ -16,21 +16,24 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	unsigned long int ret_val;
 
 	ret_val = key_index((unsigned char *)key, ht->size);
-
-	set = malloc((strlen(value) + 1) * sizeof(char));
+	
+	set = malloc(sizeof(hash_node_t));
 	if (!set)
 	{
+		set->value = malloc((strlen(value) + 1) * sizeof(char));
+		set->value = strdup(value);
+		set->key = malloc((strlen(key) + 1) * sizeof(char));
+		set->next = NULL;
+
 		if (!(ht->array[ret_val]))
 		{
 			ht->array[ret_val] = set;
-			(ht->array[ret_val])->key = (char *)key;
-			(ht->array[ret_val])->value = strdup(value);
+			(ht->array[ret_val])->key = set->key;
+			(ht->array[ret_val])->value = set->value;
 		}
 		else
 		{
 			(ht->array[ret_val])->next = set;
-			set->key = (char *)key;
-			set->value = strdup(value);
 		}
 		return (1);
 	}
