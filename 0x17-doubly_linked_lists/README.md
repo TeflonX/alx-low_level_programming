@@ -1,2 +1,5 @@
-0x17. C - Doubly linked lists
-My ALX project on Data structure and algorithm
+At the end of this project, I am expected to be able to explain to anyone,
+without the help of Google:
+
+*What is a doubly linked list
+*How to use doubly linked lists
