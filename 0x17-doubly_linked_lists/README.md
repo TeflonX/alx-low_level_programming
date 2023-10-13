@@ -3,3 +3,4 @@ without the help of Google:
 
 *What is a doubly linked list
 *How to use doubly linked lists
+*How to manipulate the data on a linked list
